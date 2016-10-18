@@ -32,8 +32,7 @@ public class BurpExtender implements IBurpExtender, IScannerCheck
     {
         // Create list 
         wf.put("Incapsula WAF"    , "incap_ses");
-        wf.put("F5 TrafficShield" , "F5-TrafficShield");        
-        wf.put("ASP.NET"          , "ASP.NET");        
+        wf.put("Incapsula CDN"    , "X-CDN: Incapsula");
                 
         // keep a reference to our callbacks object
         this.callbacks = callbacks;
