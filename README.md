@@ -8,9 +8,4 @@ Burp app that passively detects WAF presence from HTTP responses.
 * Support searches in the headers only or in the whole response
 * Use separate keyword to highlight responses 
 
-## TODO
-* Add more WAF fingerprints/keywords
-* Externalize configuration of WAF detections
-* Integrate external research if possible
-
-Status: In development
+Status: Released

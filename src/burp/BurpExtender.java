@@ -46,14 +46,21 @@ public class BurpExtender implements IBurpExtender, IScannerCheck
         // Obtain output and error streams
         stdout = new PrintWriter(callbacks.getStdout(), true);
         stderr = new PrintWriter(callbacks.getStderr(), true);
-        
-        // Write messages to output streams
-        stdout.println("Started " + EXT_NAME);
-        //callbacks.issueAlert("Started " + EXT_NAME);
+        stdout.println(
+              "=========================================================================================\n"
+            + "Use " + EXT_NAME + " to passively detect WAF presence from HTTP responses.\n\n"
+            + "Features:\n"
+            + "- Runs in the background and searches passively for WAF fingerprints\n"
+            + "- Creates informational issues (in Target/Issues) named 'WAF Detected: <WAF_NAME>'\n\n"
+            + "Notes:\n"
+            + "- Latest source can be found here: https://github.com/jourzero/WAFDetect\n"
+            + "- Please log issues/requests here: https://github.com/jourzero/WAFDetect/issues\n\n"
+            + "Cheers,\nEric Paquet\n"
+            + "=========================================================================================\n");
 
         // Load the WAF fingerprints from external file (in JAR file)
         loadWafFingerprints();
-        stdout.println("DEBUG: Fingerprints loaded: " + wafFingerprints.toString());
+        if (debug) stdout.println("DEBUG: Fingerprints loaded: " + wafFingerprints.toString());
         
         // Register ourselves as a custom scanner check
         callbacks.registerScannerCheck(this);
@@ -112,7 +119,7 @@ public class BurpExtender implements IBurpExtender, IScannerCheck
             Pattern p = Pattern.compile(wfp.regex, Pattern.MULTILINE | Pattern.CASE_INSENSITIVE);
             Matcher m = p.matcher(responseTxt.substring(0, maxOffset));
             if (m.find()){
-                if (info) stdout.println("INFO: Match for WAF " + wfp.wafType + " at " + url.toString() + " (regex=" + wfp.regex + ";within " + maxOffset + " bytes of " + response.length + " bytes total)");
+                if (debug) stdout.println("DEBUG: Match for WAF " + wfp.wafType + " at " + url.toString() + " (regex=" + wfp.regex + ";within " + maxOffset + " bytes of " + response.length + " bytes total)");
                         
                 // look for matches of our passive check keyword
                 List<int[]> matches = getMatches(response, helpers.stringToBytes(wfp.keyword), maxOffset);
@@ -125,7 +132,7 @@ public class BurpExtender implements IBurpExtender, IScannerCheck
                             "WAF Detected: " + wfp.wafType,
                             "Fingerprint Details:" + wfp.describe(), 
                             "Information"));
-                    if (info) stdout.println("INFO: Adding informational finding for WAF " + wfp.wafType + " (if not already present)");
+                    if (info) stdout.println("INFO: Adding informational finding for WAF " + wfp.wafType + ", if not already present [URL=" + url.toString() + "] [Regex=" + wfp.regex + "]");
                 }         
                 it.remove(); // avoids a ConcurrentModificationException
             }                
