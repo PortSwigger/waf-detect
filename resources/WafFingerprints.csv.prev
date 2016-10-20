@@ -1,0 +1,9 @@
+WAF_NAME,KEYWORD,REGEX,HEADER_ONLY,REFERENCE,DESCRIPTION
+Cloudflare      ,Cloudflare             ,^.*Cloudflare.*$,                          true,   https://www.cloudflare.com                  ,Cloud-based CDN, WAF & DDos prevention
+Cloudflare      ,cloudflare             ,^Server: cloudflare,                       true,   https://www.cloudflare.com                  ,Cloud-based CDN, WAF & DDoS prevention
+F5 Big-IP       ,BIG-IP-F5              ,^Set-Cookie: BIG-IP-F5,                    true,   https://support.f5.com                      ,F5 WAF & DDoS prevention
+Incapsula CDN   ,X-CDN: Incapsula       ,^X-CDN: Incapsula$,                        true,   https://www.incapsula.com                   ,Cloud-based CDN, WAF & DDos prevention
+ZenEdge Cloud   ,ZENEDGE                ,^Server: ZENEDGE$,                         true,   https://www.zenedge.com                     ,Cloud-based WAF & DDoS prevention
+ZenEdge Cloud   ,Served-By-Zenedge      ,^X-Cdn: Served-By-Zenedge$,                true,   https://www.zenedge.com                     ,Cloud-based WAF & DDoS prevention
+Barracuda WAF  ,BNI__BARRACUDA_LB_COOKIE,^Set-Cookie: BNI__BARRACUDA_LB_COOKIE=,    true,   https://github.com/EnableSecurity/wafw00f/  ,Barracuda App Firewall
+Barracuda WAF   ,BNI_persistence        ,^Set-Cookie: BNI_persistence=,             true,   https://github.com/EnableSecurity/wafw00f/  ,Barracuda App Firewall

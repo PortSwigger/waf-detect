@@ -68,7 +68,7 @@ public class BurpExtender implements IBurpExtender, IScannerCheck
         int start = 0;
         while (start < response.length)
         {
-            start = helpers.indexOf(response, match, true, start, maxOffset);
+            start = helpers.indexOf(response, match, false, start, maxOffset);
             if (start == -1)
                 break;
             matches.add(new int[] { start, start + match.length });
@@ -109,7 +109,7 @@ public class BurpExtender implements IBurpExtender, IScannerCheck
             }
 
             // Perform a REGEX search
-            Pattern p = Pattern.compile(wfp.regex, Pattern.MULTILINE);
+            Pattern p = Pattern.compile(wfp.regex, Pattern.MULTILINE | Pattern.CASE_INSENSITIVE);
             Matcher m = p.matcher(responseTxt.substring(0, maxOffset));
             if (m.find()){
                 if (info) stdout.println("INFO: Match for WAF " + wfp.wafType + " at " + url.toString() + " (regex=" + wfp.regex + ";within " + maxOffset + " bytes of " + response.length + " bytes total)");
@@ -309,22 +309,18 @@ class WafFingerprint{
 
     @Override
     public String toString() {
-        String val = "";
-        val += "\n" + wafType;
-        val += "\t\t("   + header.toString() + ")";
-        //val += "\tkeyword=" + keyword;
-        val += "\t\t("   + regex + ")";
+        String val = "\n" + wafType + ": " + regex;
         return val;
     }
 
     public String describe() {
-        String val = "\n";
-        val += "\nWAF Type            : " + wafType;
-        val += "\nWAF tech. details   : " + descr;
-        val += "\nReference           : " + ref;
-        val += "\nMatching regex      : " + regex;
-        val += "\nHighlighting keyword: " + keyword;
-        val += "\nHeader-only search? : " + header.toString();
+        String val = "<br/>\n";
+        val += "<br/>\nWAF Type             : " + wafType;
+        val += "<br/>\nWAF tech. details    : " + descr;
+        val += "<br/>\nReference            : " + ref;
+        val += "<br/>\nMatching regex       : " + regex;
+        val += "<br/>\nHighlighting keyword : " + keyword;
+        val += "<br/>\nHeader-only search?  : " + header.toString();
         return val;
     }
 }
