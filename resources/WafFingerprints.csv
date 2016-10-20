@@ -3,8 +3,6 @@ WAF_NAME,KEYWORD,REGEX,HEADER_ONLY,REFERENCE,DESCRIPTION
 Akamai,ak_bmsc,^Set-Cookie: ak_bmsc=,TRUE,https://community.akamai.com,"Akamai Global Host (aka Edge Server, Edge node)"
 Akamai,AkamaiGHost,^Server: AkamaiGHost,TRUE,https://community.akamai.com,"Akamai Global Host (aka Edge Server, Edge node)"
 Anquanbao,X-Powered-By-Anquanbao,^X-Powered-By-Anquanbao,TRUE,https://github.com/EnableSecurity/wafw00f/,Anquanbao
-Barracuda,barra_counter_session,^Set-Cookie: barra_counter_session=,TRUE,https://github.com/EnableSecurity/wafw00f/,Barracuda Application Firewall
-Barracuda,Set-Cookie: BN,^Set-Cookie: BN[IE]S_.*?=,TRUE,https://github.com/EnableSecurity/wafw00f/,Barracuda Application Firewall
 Barracuda WAF,BNI__BARRACUDA_LB_COOKIE,^Set-Cookie: BNI__BARRACUDA_LB_COOKIE=,TRUE,https://github.com/EnableSecurity/wafw00f/,Barracuda App Firewall
 Barracuda WAF,BNI_persistence,^Set-Cookie: BNI_persistence=,TRUE,https://github.com/EnableSecurity/wafw00f/,Barracuda App Firewall
 BinarySec,BinarySec,^Server: BinarySec,TRUE,https://github.com/EnableSecurity/wafw00f/,BinarySec
@@ -20,9 +18,8 @@ Citrix NetScaler,Coection,^NnCoection: close,TRUE,https://github.com/EnableSecur
 Citrix NetScaler,NS-CACHE,^Via: NS-CACHE,TRUE,https://github.com/EnableSecurity/wafw00f/,Citrix NetScaler
 Citrix NetScaler,X-client-ip,^X-client-ip,TRUE,https://github.com/EnableSecurity/wafw00f/,Citrix NetScaler
 Citrix NetScaler,pwcount,^Set-Cookie: pwcount,TRUE,https://github.com/EnableSecurity/wafw00f/,Citrix NetScaler
-Cloud flare,cloudflare-nginx,^Server: cloudflare-nginx,TRUE,https://github.com/EnableSecurity/wafw00f/,Cloud flare
-Cloud flare,__cfduid,^Set-Cookie: __cfduid,TRUE,https://github.com/EnableSecurity/wafw00f/,Cloud flare
-Cloudflare,Cloudflare,^.*Cloudflare.*$,TRUE,https://www.cloudflare.com,"Cloud-based CDN, WAF & DDoS prevention"
+Cloudflare,cloudflare-nginx,^Server: cloudflare-nginx,TRUE,https://github.com/EnableSecurity/wafw00f/,Cloud flare
+Cloudflare,__cfduid,^Set-Cookie: __cfduid,TRUE,https://github.com/EnableSecurity/wafw00f/,Cloud flare
 Cloudflare,cloudflare,^Server: cloudflare,TRUE,https://www.cloudflare.com,"Cloud-based CDN, WAF & DDoS prevention"
 DotDefender,X-dotDefender,^X-dotDefender,TRUE,https://github.com/EnableSecurity/wafw00f/,Applicure dotDefender
 F5 Big-IP,BIG-IP-F5,^Set-Cookie: BIG-IP-F5,TRUE,https://support.f5.com,F5 WAF & DDoS prevention
@@ -44,7 +41,7 @@ F5 Firepass,MRHIntranetSession,^Set-Cookie: MRHIntranetSession,TRUE,https://gith
 F5 TrafficShield,F5-TrafficShield,^Server: F5-TrafficShield,TRUE,https://github.com/EnableSecurity/wafw00f/,F5 TrafficShield
 HyperGuard,WODSESSION,^Set-Cookier: WODSESSION=,TRUE,https://github.com/EnableSecurity/wafw00f/,Art of Defence HyperGuard
 IBM DataPower,X-Backside-Transport,^X-Backside-Transport,TRUE,https://github.com/EnableSecurity/wafw00f/,IBM DataPower
-Incapsula CDN,X-CDN: Incapsula,^X-CDN: Incapsula$,TRUE,https://www.incapsula.com,"Cloud-based CDN, WAF & DDos prevention"
+Incapsula CDN,X-CDN: Incapsula,^X-CDN: Incapsula,TRUE,https://www.incapsula.com,"Cloud-based CDN, WAF & DDos prevention"
 Incapsula WAF,incap_ses,^Set-Cookie: incap_ses,TRUE,https://github.com/EnableSecurity/wafw00f/,Incapsula WAF
 Incapsula WAF,Set-Cookie: visid,^Set-Cookie: visid,TRUE,https://github.com/EnableSecurity/wafw00f/,Incapsula WAF
 InfoGuard Airlock,Set-Cookie: AL,^Set-Cookie: AL[_-]?(SESS|LB)=,TRUE,https://github.com/EnableSecurity/wafw00f/,Airlock
@@ -61,5 +58,5 @@ Safedog,Safedog,^Server: Safedog,TRUE,https://github.com/EnableSecurity/wafw00f/
 Teros WAF,st8id,^Set-Cookie: st8id=,TRUE,https://github.com/EnableSecurity/wafw00f/,Teros WAF
 USP Secure Entry Server,Secure Entry Server,^Server: Secure Entry Server,TRUE,https://github.com/EnableSecurity/wafw00f/,USP Secure Entry Server
 West263CDN,WT263CDN,^X-Cache: .+WT263CDN-.+,TRUE,https://github.com/EnableSecurity/wafw00f/,West263CDN
-ZenEdge Cloud,ZENEDGE,^Server: ZENEDGE$,TRUE,https://www.zenedge.com,Cloud-based WAF & DDoS prevention
-ZenEdge Cloud,Served-By-Zenedge,^X-Cdn: Served-By-Zenedge$,TRUE,https://www.zenedge.com,Cloud-based WAF & DDoS prevention
+ZenEdge Cloud,ZENEDGE,^Server: ZENEDGE,TRUE,https://www.zenedge.com,Cloud-based WAF & DDoS prevention
+ZenEdge Cloud,Served-By-Zenedge,^X-Cdn: Served-By-Zenedge,TRUE,https://www.zenedge.com,Cloud-based WAF & DDoS prevention
