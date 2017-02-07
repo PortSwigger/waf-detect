@@ -6,6 +6,6 @@ SerialVersion: 0
 MinPlatformVersion: 0
 ProOnly: False
 Author: Eric Paquet
-ShortDescription: Passively detects WAF presence from HTTP responses
+ShortDescription: Passively detects web application firewalls from HTTP responses.
 EntryPoint: build/libs/waf-detect-all.jar
 BuildCommand: gradle fatJar
