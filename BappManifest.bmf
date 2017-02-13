@@ -1,6 +1,7 @@
 Uuid: 12bef6b7607e46cf965c16f76e905a4c
 ExtensionType: 1
 Name: WAFDetect
+RepoName: waf-detect
 ScreenVersion: 1.0
 SerialVersion: 1
 MinPlatformVersion: 0
