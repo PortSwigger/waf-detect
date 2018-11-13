@@ -39,6 +39,8 @@ F5 Firepass,MRHCId,^Set-Cookie: MRHCId,TRUE,https://github.com/EnableSecurity/wa
 F5 Firepass,uRoamTestCookie,^Set-Cookie: uRoamTestCookie,TRUE,https://github.com/EnableSecurity/wafw00f/,F5 Firepass
 F5 Firepass,MRHIntranetSession,^Set-Cookie: MRHIntranetSession,TRUE,https://github.com/EnableSecurity/wafw00f/,F5 Firepass
 F5 TrafficShield,F5-TrafficShield,^Server: F5-TrafficShield,TRUE,https://github.com/EnableSecurity/wafw00f/,F5 TrafficShield
+Fortinet,fgd_icon,^fgd_icon,FALSE,https://github.com/Ekultek/WhatWaf,Fortinet Web Application Firewall
+Fortinet,FORTIWAFSID,^Set-Cookie: FORTIWAFSID=,TRUE,https://github.com/EnableSecurity/wafw00f/,Fortinet Web Application Firewall
 HyperGuard,WODSESSION,^Set-Cookier: WODSESSION=,TRUE,https://github.com/EnableSecurity/wafw00f/,Art of Defence HyperGuard
 IBM DataPower,X-Backside-Transport,^X-Backside-Transport,TRUE,https://github.com/EnableSecurity/wafw00f/,IBM DataPower
 Incapsula CDN,X-CDN: Incapsula,^X-CDN: Incapsula,TRUE,https://www.incapsula.com,"Cloud-based CDN, WAF & DDos prevention"
